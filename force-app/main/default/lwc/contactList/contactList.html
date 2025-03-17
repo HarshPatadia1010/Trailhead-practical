@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-25-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <!-- <template if:true={contacts.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={contacts.data}
+                columns={columns}
+                hide-checkbox-column="true"
+            ></lightning-datatable>
+        </template>
+        <template if:true={contacts.error}>
+            <p class="slds-text-color_error">Error fetching contacts: {contacts.error}</p>
+        </template>  -->
+        <template if:true={errors}>
+            <p>{errors}</p>
+        </template>
+    </lightning-card>
+</template>

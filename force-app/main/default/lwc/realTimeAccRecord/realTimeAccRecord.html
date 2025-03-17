@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-25-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card  title="Real-Time Account record"  icon-name="standard:Account">
+        <lightning-record-view-form object-api-name="Account" record-id={recordId}
+    >
+        <lightning-output-field field-name="Name"> </lightning-output-field>
+        <lightning-output-field field-name="Industry"> </lightning-output-field>
+        <lightning-output-field field-name="Phone"> </lightning-output-field>
+    </lightning-record-view-form>
+
+    <lightning-button variant="brand-outline" label="Edit" title="Primary action with lighter look"
+     onclick={handleEdit} class="slds-m-left_x-small"></lightning-button>
+       <template if:true={isEditVisible}>
+
+        <lightning-record-edit-form object-api-name="Account" record-id={recordId} onsuccess={handleSuccess}>
+    <lightning-input-field field-name="Name"> </lightning-input-field>
+    <lightning-input-field field-name="Industry"> </lightning-input-field>
+    <lightning-input-field field-name="Phone"> </lightning-input-field>
+    <div class="slds-var-m-top_medium">
+        <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+        <lightning-button variant="brand" onclick={handleCancle} label="Cancle"></lightning-button>
+    </div>
+</lightning-record-edit-form>
+       </template>
+    </lightning-card>    
+</template>
